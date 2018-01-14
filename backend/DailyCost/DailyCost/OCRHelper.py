@@ -2,55 +2,18 @@
 import json
 import os
 
-PIC_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 
 def getImage(itemID):
-	filePath = os.path.join(PIC_DIRECTORY,"image",itemID+".txt")
+	
+	return True
 
-	try:
-		with open(filePath,"r") as imageFile:
-			result = imageFile.read().replace('\n', '')
-	except Exception as e:
-		print("ERROR: Item: getImage():"+str(e))
-		result = "Null"
-
-	return result
-
-def deleteImage(itemID):
-	filePath = os.path.join(PIC_DIRECTORY,"image",itemID+".txt")
-
-	try:
-		os.remove(filePath)
-	except Exception as e:
-		print("ERROR: Item: deleteImage():"+str(e))
-		result = "Null"
-
-	return result
-
-class Item():
-	def __init__(self, itemInfo, DB):
-		self.DB = DB
-		self.itemInfo = itemInfo
-		self.itemID = None
+class OCRHelper():
+	def __init__(self):
+		self.this = 1
 
 	# return dictionary result
-	def getInfo(self):
-		result_dict = {}
-		try:
-			conn = self.DB.connect()
-			cursor = conn.cursor()
-			cursor.callproc('spGetItem', (self.itemInfo["itemID"],))
-			result_dict =  json.loads(cursor.fetchall()[0][0])
-			result_dict.update({"result":"true"})
-
-		except Exception as e:
-			print("ERROR: getInfo():"+str(e))
-			result_dict = {"result":"false"}
-
-		# Add image back
-		result_dict.update({"picture":getImage(self.itemInfo["itemID"])})
-
-		return result_dict
+	def getText(receiptImage):
+		return True
 
 	def write2DB(self):
 		# write to DB function
