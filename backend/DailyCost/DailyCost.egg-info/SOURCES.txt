@@ -1,0 +1,8 @@
+MANIFEST.in
+DailyCost/__init__.py
+DailyCost/barterServer.py
+DailyCost.egg-info/PKG-INFO
+DailyCost.egg-info/SOURCES.txt
+DailyCost.egg-info/dependency_links.txt
+DailyCost.egg-info/requires.txt
+DailyCost.egg-info/top_level.txt
