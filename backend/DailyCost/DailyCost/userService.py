@@ -8,13 +8,12 @@ class UserService():
 		self.OCRHelper = OCRHelper()
 
 	def profilePage(self, profileData):
-		
+
 		return True
 
 	def receiptPage(self, receiptData):
 		receiptText = OCRHelper.getText(receiptData["image"])
 		result_dict = {"text": receiptText}
-
 		return result_dict
 
 	

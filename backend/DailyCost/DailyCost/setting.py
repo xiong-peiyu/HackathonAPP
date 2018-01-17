@@ -15,3 +15,17 @@ MYSQL_CONNECTION_PORT = '3306'
 
 OCR_API_KEY = 'AIzaSyB3zpuY3AWSl65AmKZemrv-sNj9csxcMHY'
 OCR_URL = "https://vision.googleapis.com/v1/images:annotate?key="+OCR_API_KEY
+OCR_REQ_DATA = {
+				"requests":[
+						{
+						"image":{
+							"content":"TBA"
+						},
+						"features":[
+						{
+						"type":"DOCUMENT_TEXT_DETECTION"
+						}
+						]
+						}
+					]
+				}

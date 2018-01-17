@@ -6,17 +6,14 @@ import setting
 import requests
 import base64
 # Imports the Google Cloud client library
-from google.cloud import vision
-from google.cloud.vision import types
+from google.cloud import language
+from google.cloud.language import enums
+from google.cloud.language import types
 
 # Instantiates a client
-client = vision.ImageAnnotatorClient()
+client = language.LanguageServiceClient()
 
-def getImage(itemID):
-	
-	return True
-
-class OCRHelper():
+class NLHelper():
 	def __init__(self):
 		self.this = 1
 
@@ -46,9 +43,8 @@ class OCRHelper():
 				for symbol in block_symbols:
 					block_text = block_text + symbol.text
 
-				print('Block Content: {}'.format(block_text))
-				print('Block Bounds:\n {}'.format(block.bounding_box))
-		return response
+			
+		return document.text
 
 	def write2DB(self):
 		# write to DB function

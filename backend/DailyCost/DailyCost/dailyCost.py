@@ -19,7 +19,6 @@ userService = UserService(mysql)
 @app.route('/profile', methods=['POST'])
 def profile():
 	profileData = request.get_json(silent=True)
-	print(profileData)
 	#TODO: user service!
 	result_dict = {"result":"true"}
 	result_dict.update({"from":"profile"})
@@ -33,9 +32,8 @@ def profile():
 def receipt():
 	receipt = request.get_json(silent=True)
 	result_dict = userService.receiptPage(receipt)
-	result_dict.update({"from":"receipt"})
-
-	return jsonify(result_dict)
+	#result_dict.update({"from":"receipt"})
+	return "True"
 
 # statement view
 # return statement information
