@@ -1,0 +1,3 @@
+backend/DailyCost.egg-info
+backend/DailyCost/__pycache__/
+backend/DailyCost/setting.py
